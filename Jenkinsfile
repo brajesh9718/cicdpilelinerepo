@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('clone git repo') {
-            steps {
-                bat "git clone https://github.com/brajesh9718/cicdpilelinerepo.git"
-            }
-        }
         stage('clean & install') {
             steps {
                 bat "mvn clean install -f cicdpipelineapp/pom.xml"
