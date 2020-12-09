@@ -13,12 +13,12 @@ pipeline {
         }
         stage('test') {
             steps {
-                bat "mvn test -f cicdwebapp/"
+                bat "mvn test -f cicdpipelineapp/"
             }
         }
         stage('package') {
             steps {
-                bat "mvn package -f cicdwebapp/"
+                bat "mvn package -f cicdpipelineapp/"
             }
         }
     }
