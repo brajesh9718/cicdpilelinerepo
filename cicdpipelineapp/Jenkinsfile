@@ -1,19 +1,20 @@
 pipeline {
     agent any
-    stages {        
+    stages {
         stage('clean & install') {
             steps {
                 bat "mvn clean install -f cicdpipelineapp/pom.xml"
             }
-        }stage('testing') {
+        }
+        stage('test') {
             steps {
                 bat "mvn test -f cicdpipelineapp/"
             }
         }
-        stage('packaging') {
+        stage('package') {
             steps {
                 bat "mvn package -f cicdpipelineapp/"
             }
-        }       
+        }
     }
 }
