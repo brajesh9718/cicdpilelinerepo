@@ -5,9 +5,10 @@ pipeline {
             steps {
                 bat "mvn clean install -f cicdpipelineapp/pom.xml"
             }
-        }stage('test'){
+        }
+        stage('package'){
         	steps {
-        		bat "mvn test -f cicdpipelineapp/"
+        		bat "mvn package -f cicdpipelineapp/"
         	}
         }
     }
