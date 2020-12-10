@@ -6,9 +6,19 @@ pipeline {
                 bat "mvn clean install -f cicdpipelineapp/pom.xml"
             }
         }
-        stage('package'){
+        stage('testing'){
+        	steps {
+        		bat "mvn test -f cicdpipelineapp/"
+        	}
+        }
+        stage('packaging'){
         	steps {
         		bat "mvn package -f cicdpipelineapp/"
+        	}
+        }
+        stage('deploying'){
+        	steps {
+        		echo "Deploy begins......."
         	}
         }
     }
