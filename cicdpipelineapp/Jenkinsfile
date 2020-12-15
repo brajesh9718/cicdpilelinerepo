@@ -1,26 +1,26 @@
 pipeline {
     agent any
     stages {
-        stage('clean & install') {
+        stage('Build') {
             steps {
                 bat "mvn clean install -f cicdpipelineapp/pom.xml"
             }
         }
-        stage('Testing'){
+        stage('Test'){
         	steps {
         		bat "mvn test -f cicdpipelineapp/"
         	}
         }
-        stage('Packaging'){
+        stage('Package'){
         	steps {
         		bat "mvn package -f cicdpipelineapp/"
         	}
         }
-        stage('Deploying'){
-        	steps {
-        		echo "Deploy begins......."
-        		bat  "xcopy C:\Source\" "C:\Destination\"
-        	}
+        stage('Deploy') {
+            steps {
+            	echo "Deploying........"
+                bat '"C:\\Program Files (x86)\\Jenkins\\workspace\\cicd-pipeline-stages\\cicdpipelineapp\\target\\" -i "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\"'                
+            }
         }
         
     }
