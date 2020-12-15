@@ -34,6 +34,7 @@ public class HomeController {
 	// URL to request =
 		// http://localhost:<Port>/spring-mvc-example/getUserById/102?no=3
 		@GetMapping(value = "/getUserById/{id}")
+		@ResponseBody
 		public User getUserById(@PathVariable int id) {
 			try {
 				Address address = new Address();
