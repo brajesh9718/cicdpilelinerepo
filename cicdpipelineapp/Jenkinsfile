@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
             	echo "Deploying........"
-                bat 'copy "C:\\Program Files (x86)\\Jenkins\\workspace\\cicd-pipeline-stages\\cicdpipelineapp\\target\\"  "http://18.223.121.184:8080/webapps"' 
+                bat 'copy "C:\\Program Files (x86)\\Jenkins\\workspace\\cicd-pipeline-stages\\cicdpipelineapp\\target\\"  "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\"' 
             }
         }
         
