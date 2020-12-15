@@ -19,7 +19,7 @@ pipeline {
         stage('Deploying'){
         	steps {
         		echo "Deploy begins......."
-        		bat("xcopy C:\\Source\\" "C:\\Destination\\")
+        		bat "xcopy C:/Source/" "C:/Destination/"
         	}
         }
         
