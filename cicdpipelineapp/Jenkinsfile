@@ -20,7 +20,7 @@ pipeline {
             steps {
             	echo "Deploying........"                
                 //bat 'xcopy "C:\\Program Files (x86)\\Jenkins\\workspace\\cicd-pipeline-stages\\cicdpipelineapp\\target\\"  "ec2-user@ip-172-31-44-198:/opt/apache-tomcat-8.5.61/webapps/"'
-                bat 'xcopy "C:\\Program Files (x86)\\Jenkins\\workspace\\cicd-pipeline-stages\\cicdpipelineapp\\target\\"  "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps*"' 
+                bat 'copy "C:\\Program Files (x86)\\Jenkins\\workspace\\cicd-pipeline-stages\\cicdpipelineapp\\target\\"  "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\"' 
             }
         }
         
