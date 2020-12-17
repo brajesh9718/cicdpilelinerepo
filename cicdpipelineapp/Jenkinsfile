@@ -20,7 +20,7 @@ pipeline {
             steps {
             	echo "Deploying........"
                 //bat 'copy "C:\\Program Files (x86)\\Jenkins\\workspace\\cicd-pipeline-stages\\cicdpipelineapp\\target\\"  "ec2-user@ip-172-31-44-198:/opt/apache-tomcat-8.5.61/"' 
-                pscp '-i "C:\\AWS\\javalinux.ppk" "C:\\Program Files (x86)\\Jenkins\\workspace\\cicd-pipeline-stages\\cicdpipelineapp\\target\\" "\ec2-3-17-62-181.us-east-2.compute.amazonaws.com:/home/ec2-user/opt/apache-tomcat-8.5.61/webapps"'
+                pscp '-i "C:\\AWS\\javalinux.ppk" "C:\\Program Files (x86)\\Jenkins\\workspace\\cicd-pipeline-stages\\cicdpipelineapp\\target\\" "/ec2-3-17-62-181.us-east-2.compute.amazonaws.com:/home/ec2-user/opt/apache-tomcat-8.5.61/webapps"'
             }
         }
         
